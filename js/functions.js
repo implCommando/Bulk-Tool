@@ -8,7 +8,7 @@ $(document).ready(function(){
 	}
 
 	hideAll();
-	//$('#home-page').fadeIn();
+	$('#home-page').delay(500).fadeIn();
 
 	$('.c_btn').click(function(){
 
@@ -25,12 +25,14 @@ $(document).ready(function(){
 				hideAll();
 				$('#copy-page').delay(500).fadeIn();
 				$(this).addClass(' active');
+				initTextArea();
 				break;				
 			case 'purge-page':
 				hideAll();
 				//createPurgeCommands();
 				$('#purge-page').delay(500).fadeIn();
 				$(this).addClass(' active');
+				initTextArea();				
 				break;				
 			case 'feed-copy-page':
 				hideAll();
@@ -42,7 +44,12 @@ $(document).ready(function(){
 				$('#feed-edit-page').delay(500).fadeIn();
 				$(this).addClass(' active');
 				break;				
-			
+			case 'abp-page': 
+				hideAll();
+				$('#feed-edit-page').delay(500).fadeIn();
+				$(this).addClass(' active');
+				change_ABP_mode();
+				break;	
 				
 
 		}
@@ -413,6 +420,11 @@ function createCopyCommands(variant) {
    	document.getElementById("big_textarea_copy").innerHTML = copyCommandsHTML;
 };
 
+function initTextArea() {
+	
+	console.log('initTextArea');
+	$('.big_textarea').innerHTML = "";
+};
 
 function addCustomCode(variant, widget_type) {
 
@@ -920,6 +932,9 @@ function change_ABP_mode() {
 	  catch(err) {}
   
   }
+	var HTMLCommands = "";
+	var HTMLCommands = commands.replaceAll("\n", "<br>");
+	document.getElementById("big_textarea_abp").innerHTML = HTMLCommands; 
 
 };
 
