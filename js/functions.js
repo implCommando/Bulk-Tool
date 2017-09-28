@@ -46,7 +46,7 @@ $(document).ready(function(){
 				break;				
 			case 'abp-page': 
 				hideAll();
-				$('#feed-edit-page').delay(500).fadeIn();
+				$('#abp-page').delay(500).fadeIn();
 				$(this).addClass(' active');
 				change_ABP_mode();
 				break;	
