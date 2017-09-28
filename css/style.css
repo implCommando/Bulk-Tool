@@ -1,0 +1,83 @@
+html {
+    min-width:100%;
+    min-height:100%
+}
+html:after {
+    content : "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url("../images/bg3.jpg");
+    width: 100%;
+    min-height: 100%;
+    opacity : 0.1;
+    z-index: -1;
+}
+html body {
+	text-align: center;
+   	font-family: 'Raleway',sans-serif;
+}
+#main_nav a#logo{
+    font-weight: bold;
+    font-size: 18px;
+    padding: 6px 48px 3px 0px;
+    background: url(../images/logo.png) no-repeat scroll 98% 2px transparent;
+    background-size: 46px;
+}
+a#logo:hover{
+	text-decoration: none;
+}
+body h1{
+	color: #3c817f;
+ 	margin-top: 50px;
+}
+#main_nav{
+	background-color: #ffd700;	
+	height: 52px;	
+}
+#main_nav a {
+	color: #3c817f;
+	border-right: 1px dotted #efede1;	
+}
+form {
+	font-size: 15px;
+}
+form input{
+	text-align: center;	
+	font-size: 15px;
+}
+.big_textarea{
+	width: 80%;
+	min-height: 100px;
+	max-height: 800px;
+	overflow-y: scroll;	
+	margin: 20px auto;
+	background: #fff;
+	opacity: 0.8;
+	border: 1px #1c1c1c solid;
+	border-radius: 10px;
+	text-align: left;
+	padding: 5px 5px 15px 15px;
+	font-size: 16px;
+}
+#main_nav a.active{
+	background-color: #e1e1e1;
+}
+
+/*#exportToFileBtn{
+	margin-bottom: 20px;
+}*/
+.actionBtns {
+	margin-bottom: 20px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background: #d3d3d3	
+}
+
+#radio_btn_container label {
+	padding-left: 15px;
+}
+#fileBtn{
+	margin-bottom: 30px;
+}

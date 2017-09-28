@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Access-Control-Allow-Origin" content="http://www.google.com">	
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap -->
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">    	
+	<script type="text/javascript" src="js/functions.js"></script>	
+
+	<title> Impl Custom Bulk </title>
+</head>
+<body>
+	
+	<nav id="main_nav" class="navbar navbar-default">
+	  <div class="container-fluid">
+	  
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+
+	      	<li class="c_btn" data-page-name="home-page"> <a id="logo"> MAKE BULK <br>HAPPENS </a> </li>
+
+	        <li class="c_btn" data-page-name="copy-page"> <a> COPY <span class="sr-only"></span></a></li>
+
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EDIT <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li class="c_btn"><a> Simple client-properties</a></li>
+	            <li class="c_btn"><a> Responsive Rules</a></li>
+	            <li class="c_btn"><a> Custom CSS</a></li>
+	            <li class="c_btn"><a> Hook</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li class="c_btn"><a> Common Bulks</a></li>
+	          </ul>
+	        </li>
+
+	        <li class="c_btn" data-page-name="purge-page"><a onclick="createPurgeCommands()">PURGE</a></li>	        
+
+	        <li id="commonBulks" class="dropdown">
+	          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Common Bulks<span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li class="c_btn"><a> Vertical carousel 3X5</a></li>
+	            <li class="c_btn"><a> Smaller Vertical carousel 3X5</a></li>
+	            <li class="c_btn"><a> Vertical carousel 3X6</a></li>
+	            <li class="c_btn"><a> Smaller Vertical carousel 3X6</a></li>	            
+	            <li class="c_btn"><a> Titles font-size to 16px</a></li>
+	            <li class="c_btn"><a> 3X2 Ratio on mobile</a></li>
+   	            <li class="c_btn"><a> 3X2 Ratio on Right Rail</a></li>
+	            <li class="c_btn"><a> 2:1 Desktop Ratio</a></li>
+	            <li class="c_btn"><a> ABP</a></li>	            
+	            <li class="c_btn"><a> 3rd-party FRAUD</a></li>	            	            
+	          </ul>
+	        </li>	
+
+	        <li class="c_btn" data-page-name="feed-copy-page"> <a> FEED BULK - CREATE <span class="sr-only"></span></a></li>
+	        <li class="c_btn" data-page-name="feed-edit-page"> <a> FEED BULK - EDIT <span class="sr-only"></span></a></li>
+	      
+	      </ul>
+
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+
+	<div id="main_container">
+
+		<div class="page" id="home-page">
+			<h1> Make Bulk Happen </h1>
+			<h2> The Goal: <br> Avoid performing the same manual work more than once <br> </h2>
+		</div>
+
+		<div class="page" id="copy-page">
+			<h1> COPY COMMANDS </h1>
+			<form>
+			  Variant name:<br>
+			  <input type="text" id="variantName" name="variant" /><br><br>
+			  <input type="button" value="Create Copy Commands" onclick="createCopyCommands(document.getElementById('variantName').value)" />
+			</form>
+			<p id="big_textarea_copy" class="big_textarea"> </p>
+			<input type="button" onclick="writeToFile()" value="Export Commands To File" />	
+		</div>
+
+		<div class="page" id="edit-page">
+
+		</div>
+
+		<div class="page" id="purge-page">
+			<h1> PURGE COMMANDS </h1>
+			<p id="big_textarea_purge" class="big_textarea"> </p>
+			<input type="button" onclick="writeToFile()" value="Export Commands To File" />	
+		</div>
+
+		<div class="page" id="common-bulks-page">
+
+		</div>		
+
+		<div class="page" id="feed-copy-page">
+			<h1> FEED BULK </h1>
+			<h2> Creat the widgets </h2>
+		    <input type="button" value="Create all modes for FEED" onclick="createModesForFeed()" />
+			<p id="big_textarea_copy_feed" class="big_textarea"> </p>
+			<input id="fileBtn" type="button" onclick="writeToFile()" value="Export Commands To File" />		
+		</div>
+
+		<div class="page" id="feed-edit-page">
+			<h1> FEED BULK </h1>
+			<h2> EDIT the widgets per publisher </h2>
+		    <input type="button" value="SET all modes per publisher" onclick="setFeedPerPub()" />
+			<p id="big_textarea_edit_feed" class="big_textarea"> </p>
+			<input id="fileBtn" type="button" onclick="writeToFile()" value="Export Commands To File" />		
+		</div>
+
+	</div>
+
+
+
+	<div id="containerForOpacity"> </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+

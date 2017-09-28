@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Access-Control-Allow-Origin" content="http://www.google.com">
+	<link rel="icon" type="image/png" href="file:///Users/chen.s/Desktop/Project/images/favicon.png"/>	
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+	<script type="text/javascript" src="js/functions.js"></script>	
+    <!-- Bootstrap -->
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">    	
+	<title> Impl Custom Bulk </title>
+</head>
+<body>
+	
+	<nav id="main_nav" class="navbar navbar-default">
+	  <div class="container-fluid">
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        
+	      	<li> <a id="logo" href="index.html"> MAKE BULK <br>HAPPENS </a> </li>
+
+	        <li><a href="data.html"> DATA <span class="sr-only">(current)</span></a></li>
+	        
+	        <li> <a href="copy_commands.html">COPY <span class="sr-only"></span></a></li>
+
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EDIT <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="simple_CP_changes.html">Simple client-properties</a></li>
+	            <li><a href="#">Responsive Rules</a></li>
+	            <li><a href="#">Custom CSS</a></li>
+	            <li><a href="#">Hook</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="#">One more separated link</a></li>
+	          </ul>
+	        </li>
+
+	        <li><a href="purge.html" onclick="createPurgeCommands()">PURGE</a></li>	        
+	        
+	        <li id="commonBulks" class="dropdown">
+	          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Common Bulks<span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="vertical_carousel_3x5.html">Vertical carousel 3X5</a></li>
+	            <li><a href="vertical_carousel_3x6.html">Vertical carousel 3X6</a></li>
+	            <li><a href="font_size_16px.html">Titles font-size to 16px</a></li>
+	            <li><a href="3X2_mobile_ratio.html">3X2 Ratio on mobile</a></li>
+	            <li><a href="">ABP</a></li>	     
+	            <li><a href="fraud_implementation.html">3rd-party FRAUD</a></li>		                   	            
+	          </ul>
+	        </li>		         
+
+	      </ul>
+
+	     
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+	<h1> ABP Responsive Rules Change (1 row only) </h1>
+	<div id="containerForOpacity"> </div>
+
+	<p id="big_textarea"> </p>
+	
+	<input class="actionBtns" type="button" onclick="writeToFile()" value="Export Commands To File" />	<br>
+
+	<input class="actionBtns" type="button" onclick="runCmd('cp001')" value="Run the commands on Production" />	<br>
+
+	<input class="actionBtns" type="button" onclick="runCmd('impl-cp-001')" value="Run the commands on QA environment" />		
+
+	 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+
